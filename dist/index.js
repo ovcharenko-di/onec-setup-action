@@ -80564,6 +80564,7 @@ class OneGet {
         core.debug(`Get project page for: ${project}`);
         const page = await this.client.projectPage(project);
         const versions = parser.versions(page);
+        core.debug(`Get versions: ${versions}`);
         const filteredVersions = versions.filter(v => v.name === version);
         if (filteredVersions.length === 0) {
             error(`Version ${version} for ${project} not found`);
